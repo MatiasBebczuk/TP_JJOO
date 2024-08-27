@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<!-- Secciones Destacadas -->
+    <div class="row">
+        <!-- Sección de Deportes -->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="/img/deportes.jpg" class="card-img-top" alt="Deportes">
+                <div class="card-body">
+                    <h5 class="card-title">Deportes</h5>
+                    <p class="card-text">Explora todos los deportes de los Juegos Olímpicos.</p>
+                    <a href="/Home/Deportes" class="btn btn-primary">Ver Deportes</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Países-->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="~/img/paises.jpg" class="card-img-top" alt="Países">
+                <div class="card-body">
+                    <h5 class="card-title">Países</h5>
+                    <p class="card-text">Conoce los países participes de los J.J.O.O.</p>
+                    <a href="/Home/Paises" class="btn btn-primary">Ver Países</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Noticias-->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="~/img/Historia.jpg" class="card-img-top" alt="Noticias">
+                <div class="card-body">
+                    <h5 class="card-title">Historia</h5>
+                    <p class="card-text">Conoce la historia de los J.J.O.O.</p>
+                    <a href="../Home/Historia" class="btn btn-primary">Ver Historia</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+  <div class="card-header">
+    Admin Options
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Agregar Deportista</h5>
+    <p class="card-text">Aquí podras ingresar los deportistas a la base de datos con su nombre. apellido, deporte y país.</p>
+    <a href="../Home/AgregarDeportista" class="btn btn-primary">Agregar Deportista</a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Eliminar Deportista</h5>
+    <p class="card-text">Aquí podras ingresar los deportistas a la base de datos a través de su ID.</p>
+    <a href='@Url.Action("EliminarDeportista","Home")'  class="btn btn-primary">Eliminar Deportista</a>
+    
+  </div>
+</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h4q9bCZQLNI?si=osJZ07aTHAIS5mVB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

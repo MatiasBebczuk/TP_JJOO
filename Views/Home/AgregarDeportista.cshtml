@@ -1,0 +1,46 @@
+@{
+    ViewBag.Title = "Agregar Deportista";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/AgregarDeportista.css">
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <form method="post" action='@Url.Action("GuardarDeportista", "Home")'>
+        <label for="Nombre">Nombre:</label>
+        <input type="text" id="Nombre" name="Nombre" required />
+
+        <label for="Apellido">Apellido:</label>
+        <input type="text" id="Apellido" name="Apellido" required />
+
+        <label for="IdDeporte">Deporte:</label>
+        <select id="IdDeporte" name="IdDeporte" required>
+            @foreach (var deporte in ViewBag.Deportes as List<Deporte>)
+            {
+                <option value="@deporte.IdDeporte">@deporte.Nombre</option>
+            }
+        </select>
+
+        <label for="IdPais">País:</label>
+        <select id="IdPais" name="IdPais" required>
+            @foreach (var pais in ViewBag.Paises as List<Pais>)
+            {
+                <option value="@pais.IdPais">@pais.Nombre</option>
+            }
+        </select>
+
+        <label for="Foto">Foto:</label>
+        <input type="text" id="Foto" name="Foto" required />
+
+        <input type="date" name="FechaNacimiento" required />
+
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>

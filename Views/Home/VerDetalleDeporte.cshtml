@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle Deporte</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Deportes.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>@ViewBag.Deporte.Nombre</h1>
+        <img src="@ViewBag.Deporte.Foto" alt="@ViewBag.Deporte.Nombre" class="img-fluid mb-4" />
+
+        <h2>Deportistas que participan en este deporte:</h2>
+        <ul>
+            @foreach (var deportista in ViewBag.Deportistas)
+            {
+                <li>
+                    <a href="@Url.Action("VerDetalleDeportista", "Home", new { idDeportista = deportista.IdDeportista })">
+                        @deportista.Nombre @deportista.Apellido
+                        @deportista.Foto
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+@{
+    ViewBag.Title = "Detalle del País";
+    var pais = ViewBag.Pais;
+    var deportistas = ViewBag.Deportistas;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/VerDetallePais.css">
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h1>@pais.Nombre</h1>
+            <img src="@pais.Bandera" alt="Bandera de @pais.Nombre" class="img-fluid" />
+
+            <h2>Deportistas del País</h2>
+            <div class="row">
+                @if (deportistas != null && deportistas.Count > 0)
+                {
+                    foreach (var deportista in deportistas)
+                    {
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img src="@deportista.Imagen" alt="@deportista.Nombre @deportista.Apellido" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@deportista.Nombre @deportista.Apellido</h5>
+                                    <a href="@Url.Action("VerDetalleDeportista", "Home", new { idDeportista = deportista.IdDeportista })" class="btn btn-primary">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No hay deportistas disponibles para este país.</p>
+                }
+            </div>
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

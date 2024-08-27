@@ -1,0 +1,35 @@
+@{
+    ViewBag.Title = "Listado de Países";
+    var paises = ViewBag.Paises as List<Pais>;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/Paises.css">
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <ul class="pais-list">
+        @if (paises != null && paises.Count > 0)
+        {
+            foreach (var pais in paises)
+            {
+                <li class="pais-item">
+                    <img src="@pais.Bandera" alt="Bandera de @pais.Nombre" class="pais-img" />
+                    <a href="@Url.Action("VerDetallePais", "Home", new { idPais = pais.IdPais })" class="pais-link">
+                        @pais.Nombre
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <p>No hay países disponibles.</p>
+        }
+    </ul>
+</body>
+</html>

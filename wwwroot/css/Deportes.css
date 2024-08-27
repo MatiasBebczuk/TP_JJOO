@@ -1,0 +1,32 @@
+.deporte-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deporte-item {
+    margin: 10px;
+    text-align: center;
+    width: 30%; /* Ajusta el tamaño según tu diseño */
+}
+
+.deporte-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.deporte-link {
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.deporte-link:hover {
+    text-decoration: underline;
+}

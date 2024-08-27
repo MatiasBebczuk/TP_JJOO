@@ -1,0 +1,31 @@
+.pais-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pais-item {
+    margin: 10px;
+    text-align: center;
+}
+
+.pais-img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.pais-link {
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.pais-link:hover {
+    text-decoration: underline;
+}

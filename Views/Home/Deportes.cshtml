@@ -1,0 +1,35 @@
+@{
+    ViewBag.Title = "Listado de Deportes";
+    var deportes = ViewBag.Deportes as List<Deporte>;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/Deportes.css">
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <ul class="deporte-list">
+        @if (deportes != null && deportes.Count > 0)
+        {
+            foreach (var deporte in deportes)
+            {
+                <li class="deporte-item">
+                    <img src="@deporte.Foto" alt="Imagen de @deporte.Nombre" class="deporte-img" />
+                    <a href="@Url.Action("VerDetalleDeporte", "Home", new { idDeporte = deporte.IdDeporte })" class="deporte-link">
+                        @deporte.Nombre
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <p>No hay deportes disponibles.</p>
+        }
+    </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@{
+    ViewBag.Title = "Detalle del Deportista";
+    var deportista = ViewBag.Deportista as Deportista;
+    var deporte = ViewBag.Deporte as Deporte;
+    var pais = ViewBag.Pais as Pais;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/VerDetalleDeportista.css">
+</head>
+<body>
+    <div class="container">
+        <h1>@deportista.Nombre @deportista.Apellido</h1>
+        <img src="@deportista.Imagen" alt="Imagen de @deportista.Nombre @deportista.Apellido">
+
+        <h2>Detalles del Deportista</h2>
+        <p><strong>Deporte:</strong> @deporte.Nombre</p>
+        <p><strong>País:</strong> @pais.Nombre</p>
+    </div>
+</body>
+</html>
